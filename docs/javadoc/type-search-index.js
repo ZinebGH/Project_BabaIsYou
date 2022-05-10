@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"fr.umlv.baba","l":"Block"},{"p":"fr.umlv.action","l":"Game"},{"p":"fr.umlv.baba","l":"Grid"},{"p":"main","l":"Main"},{"p":"fr.umlv.action","l":"Movement"},{"p":"fr.umlv.baba","l":"Rule"},{"p":"fr.umlv.words","l":"Words"},{"p":"fr.umlv.words","l":"WordTypes"}];updateSearchResults();

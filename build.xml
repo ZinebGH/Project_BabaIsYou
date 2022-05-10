@@ -1,0 +1,32 @@
+<project name="BabaIsYou" basedir=".">
+	<property name="jar" value="baba.jar"/>
+	<property name="src" value="src"/>
+	<property name="classes" value="classes/"/>
+	<property name="res" value="res/"/>
+	<property name="docs" value="docs/javadoc/"/>
+	<property name="zen5" value="lib/zen5.jar "/>		
+	<target name="compile" description="compile the source">
+	    <javac srcdir="${src}" destdir="${classes}" classpath="${zen5}"/>
+	</target>
+	<target name="jar" depends="compile" description="compile the source and create a jar">
+		<jar destfile="${jar}">
+	        <manifest>
+	            <attribute name="Main-Class" value="main.Main"/>
+	            <attribute name="Class-Path" value="lib/zen5.jar"/>
+	        </manifest>
+			<fileset dir="${res}"/>
+			<fileset dir="${classes}"/>
+	        <zipfileset dir="lib" includes="zen5.jar"/>
+		 </jar>
+	</target>
+	<target name="javadoc" description="generate javadoc">
+		<mkdir dir="${docs}"/>
+		<javadoc sourcepath="${src}" destdir="${docs}" classpath="${zen5}"/>
+	</target>
+	<target name="clean" description="clean up project">
+	    <delete dir="${classes}"/>
+	    <delete dir="${docs}"/>
+		<delete file="${jar}"/>
+		<mkdir dir="${classes}"/>
+	 </target>
+</project>
